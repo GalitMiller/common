@@ -17,8 +17,8 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 )
 
-// HttpOK returns 200 in a format that the AWS API Gateway can understand
-func HttpOK(body string) (events.APIGatewayProxyResponse, error) {
+// HTTPOK returns 200 in a format that the AWS API Gateway can understand
+func HTTPOK(body string) (events.APIGatewayProxyResponse, error) {
 	return events.APIGatewayProxyResponse{
 		Headers:    map[string]string{"Access-Control-Allow-Origin": "*"},
 		StatusCode: http.StatusOK,
@@ -26,8 +26,8 @@ func HttpOK(body string) (events.APIGatewayProxyResponse, error) {
 	}, nil
 }
 
-// HttpServerError returns 500 in a format that the AWS API Gateway can understand
-func HttpServerError(err error) (events.APIGatewayProxyResponse, error) {
+// HTTPServerError returns 500 in a format that the AWS API Gateway can understand
+func HTTPServerError(err error) (events.APIGatewayProxyResponse, error) {
 	Error("%s\n", err)
 	return events.APIGatewayProxyResponse{
 		Headers:    map[string]string{"Access-Control-Allow-Origin": "*"},
@@ -36,8 +36,8 @@ func HttpServerError(err error) (events.APIGatewayProxyResponse, error) {
 	}, nil
 }
 
-// HttpClientError returns 4xx in a format that the AWS API Gateway can understand
-func HttpClientError(status int) (events.APIGatewayProxyResponse, error) {
+// HTTPClientError returns 4xx in a format that the AWS API Gateway can understand
+func HTTPClientError(status int) (events.APIGatewayProxyResponse, error) {
 	return events.APIGatewayProxyResponse{
 		Headers:    map[string]string{"Access-Control-Allow-Origin": "*"},
 		StatusCode: status,
