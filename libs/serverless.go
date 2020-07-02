@@ -9,7 +9,7 @@
  * information is prohibited except by express written agreement with RemoteCourthouse.
  */
 
-package common
+package libs
 
 import (
 	"net/http"
