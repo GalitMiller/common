@@ -1,4 +1,4 @@
-module github.com/github.com/common
+module galitmiller/common
 
 go 1.14
 
