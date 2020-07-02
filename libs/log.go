@@ -1,12 +1,5 @@
 /*
  * Author: Galit Miller
- *
- * Copyright (c) 2020 RemoteCourthouse as an unpublished work.
- * All rights reserved.
- *
- * The information contained herein is confidential property of RemoteCourthouse.
- * The use, copying, transfer or disclosure of such
- * information is prohibited except by express written agreement with RemoteCourthouse.
  */
 
 package libs
