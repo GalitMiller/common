@@ -2,7 +2,7 @@
  * Author: Galit Miller
  */
 
-package libs
+package utils
 
 import (
 	"log"
