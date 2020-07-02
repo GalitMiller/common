@@ -22,7 +22,7 @@ var (
 	errlog     *log.Logger = log.New(os.Stdout, "ERROR: ", log.Ldate|log.Ltime)
 )
 
-// Info logger
+// Infoo logger
 func Info(m string, ms ...interface{}) { infolog.Printf(m, ms...) }
 
 // Warn logger
