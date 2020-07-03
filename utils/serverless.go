@@ -5,6 +5,7 @@
 package utils
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -30,10 +31,11 @@ func HTTPServerError(err error) (events.APIGatewayProxyResponse, error) {
 }
 
 // HTTPClientError returns 4xx in a format that the AWS API Gateway can understand
-func HTTPClientError(status int) (events.APIGatewayProxyResponse, error) {
+func HTTPClientError(status int, err string) (events.APIGatewayProxyResponse, error) {
+	Error("%s\n", err)
 	return events.APIGatewayProxyResponse{
 		Headers:    map[string]string{"Access-Control-Allow-Origin": "*"},
 		StatusCode: status,
-		Body:       http.StatusText(status),
+		Body:       fmt.Sprintf("%s, %s", http.StatusText(status), err),
 	}, nil
 }
